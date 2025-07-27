@@ -1,0 +1,11 @@
+# .gitignore
+# 가상환경 무시
+venv/
+__pycache__/
+*.pyc
+
+# 나머지는 추적
+!openrc.sh
+!openstacksdk/
+!etc/
+!python-openstackclient/

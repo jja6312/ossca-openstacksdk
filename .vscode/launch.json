@@ -1,0 +1,29 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python 디버거: 인수가 있는 현재 파일",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "C:/Users/User/OneDrive - (주)위즈베이스/2projects/99. 개인/openstack/oss/OCA-OpenStack/python-openstackclient/openstackclient/shell.py",
+      "console": "integratedTerminal",
+      "args": ["user", "list"],
+      "env": {
+        "OS_PROJECT_NAME": "admin",
+        "OS_TENANT_NAME": "admin",
+        "OS_USERNAME": "admin",
+        "OS_PASSWORD": "2025_osc_openstack",
+        "OS_REGION_NAME": "RegionOne",
+        "OS_IDENTITY_API_VERSION": "3",
+        "OS_AUTH_TYPE": "password",
+        "OS_AUTH_URL": "http://133.186.203.38/identity",
+        "OS_USER_DOMAIN_ID": "default",
+        "OS_PROJECT_DOMAIN_ID": "default",
+        "OS_VOLUME_API_VERSION": "3"
+      }
+    }
+  ]
+}
