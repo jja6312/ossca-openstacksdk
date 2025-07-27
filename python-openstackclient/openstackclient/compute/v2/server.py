@@ -2778,15 +2778,15 @@ class ListServer(command.Lister):
             'id',
             'name',
             'status',
-            # 'project_name', # Add project_name & User_name to serverlist - 2025.07.28 jian
-            # 'user_name'# Add project_name & User_name to serverlist - 2025.07.28 jian
+            'project_name', # Add project_name & User_name to serverlist - 2025.07.28 jian
+            'user_name'# Add project_name & User_name to serverlist - 2025.07.28 jian
         )
         column_headers: tuple[str, ...] = (
             'ID',
             'Name',
             'Status',
-            # 'Project_name',# Add project_name & User_name to serverlist - 2025.07.28 jian
-            # 'User_name'# Add project_name & User_name to serverlist - 2025.07.28 jian
+            'Project_name',# Add project_name & User_name to serverlist - 2025.07.28 jian
+            'User_name'# Add project_name & User_name to serverlist - 2025.07.28 jian
         )
 
         if parsed_args.long:
@@ -2930,14 +2930,14 @@ class ListServer(command.Lister):
         data = list(compute_client.servers(**search_opts))
         # Get project and user information - 25.7.28 jian
         # Add project_name & User_name to serverlist - 2025.07.28 jian
-        # project_map = {p.id: p.name for p in identity_client.projects.list()}
-        # user_map = {u.id: u.name for u in identity_client.users.list()}
+        project_map = {p.id: p.name for p in identity_client.projects.list()}
+        user_map = {u.id: u.name for u in identity_client.users.list()}
         
         # Injects a name property into each server object - 25.7.28 jian
         # Add project_name & User_name to serverlist - 2025.07.28 jian
-        # for s in data:
-        #     s.project_name = project_map.get(s.project_id)
-        #     s.user_name = user_map.get(s.user_id)
+        for s in data:
+            s.project_name = project_map.get(s.project_id)
+            s.user_name = user_map.get(s.user_id)
 
 
         images = {}
